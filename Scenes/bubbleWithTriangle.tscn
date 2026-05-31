@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://difrutqntv5m2"]
+
+[ext_resource type="PackedScene" uid="uid://v8nlscmegn28" path="res://Scenes/panel_container.tscn" id="1_ctivi"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=1018204740]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+offset_right = 170.0
+offset_bottom = -612.0
+grow_vertical = 0
+size_flags_vertical = 0
+
+[node name="ChatBubble" parent="." unique_id=132144526 instance=ExtResource("1_ctivi")]
+layout_mode = 2

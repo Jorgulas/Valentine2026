@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c50pxaa01h3vd"
+path="res://.godot/imported/finalmessage.ase-95e11f21a3e4ba3b62b84851de7ea3a6.res"
+
+[deps]
+
+source_file="res://Sprites/ases/finalmessage.ase"
+dest_files=["res://.godot/imported/finalmessage.ase-95e11f21a3e4ba3b62b84851de7ea3a6.res"]
+
+[params]
+

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dfevbeskx8do8"]
+
+[ext_resource type="Script" uid="uid://b6vcar460grqw" path="res://Scripts/pillar.gd" id="1_iutp8"]
+[ext_resource type="Texture2D" uid="uid://cboh2adn0nkxg" path="res://Sprites/pillar1.png" id="2_nfh0k"]
+[ext_resource type="Texture2D" uid="uid://cnta4lwboq1wk" path="res://Sprites/pillar3.png" id="2_qmoib"]
+[ext_resource type="Texture2D" uid="uid://d3xqliomwis5o" path="res://Sprites/pillar2.png" id="3_vb7c1"]
+[ext_resource type="Texture2D" uid="uid://beqouwddyaf1p" path="res://Sprites/CountPostal.png" id="4_noj0n"]
+[ext_resource type="AudioStream" uid="uid://c7gqr4rdsfdtl" path="res://Sprites/music/correct.wav" id="5_vb7c1"]
+[ext_resource type="AudioStream" uid="uid://ogyfh555wdl3" path="res://Sprites/music/wrong.wav" id="6_noj0n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avu7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qmoib")
+}],
+"loop": true,
+"name": &"activated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nfh0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vb7c1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi774"]
+size = Vector2(14, 15)
+
+[node name="pillar" type="Node2D" unique_id=520452133]
+script = ExtResource("1_iutp8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1739722283]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_avu7i")
+animation = &"activated"
+autoplay = "default"
+
+[node name="LineEdit" type="LineEdit" parent="AnimatedSprite2D" unique_id=1495130563]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -53.0
+offset_right = 34.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+right_icon = ExtResource("4_noj0n")
+icon_expand_mode = 2
+right_icon_scale = 0.36
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=581730132]
+position = Vector2(-682, -111)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=658637352]
+position = Vector2(682, 111.5)
+shape = SubResource("RectangleShape2D_pi774")
+
+[node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1513808730]
+position = Vector2(-682, -111)
+stream = ExtResource("5_vb7c1")
+volume_db = 11.831
+pitch_scale = 1.38
+max_polyphony = 4
+bus = &"Music"
+
+[node name="wrong" type="AudioStreamPlayer2D" parent="." unique_id=667155450]
+position = Vector2(-682, -111)
+stream = ExtResource("6_noj0n")
+volume_db = 7.544
+pitch_scale = 1.21
+bus = &"Music"
+
+[connection signal="focus_entered" from="AnimatedSprite2D/LineEdit" to="." method="_on_line_edit_focus_entered"]
+[connection signal="text_submitted" from="AnimatedSprite2D/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dm1j28fpiisqp"]
+
+[ext_resource type="Texture2D" uid="uid://ceslp8biled0l" path="res://Sprites/bag1.png" id="1_tnmuq"]
+[ext_resource type="Script" uid="uid://dpy3pojxhsma3" path="res://Scripts/InventoryManager.gd" id="1_u7wva"]
+[ext_resource type="Texture2D" uid="uid://dditgj2k2d7jv" path="res://Sprites/bag2.png" id="2_u7wva"]
+[ext_resource type="Texture2D" uid="uid://oqbydcwcwreh" path="res://Sprites/bag3.png" id="3_508hb"]
+[ext_resource type="Texture2D" uid="uid://2l1wrq6sbeec" path="res://Sprites/bag4.png" id="4_56fu1"]
+[ext_resource type="Texture2D" uid="uid://c7io1way4if3b" path="res://Sprites/bag5.png" id="5_k1prk"]
+[ext_resource type="Texture2D" uid="uid://5faqno4ndxvj" path="res://Sprites/bag6.png" id="6_64l3q"]
+[ext_resource type="Texture2D" uid="uid://nvo1sl5sw1wj" path="res://Sprites/bag7.png" id="7_7m34i"]
+[ext_resource type="Texture2D" uid="uid://cko3xv6ksd6uq" path="res://Sprites/bag8.png" id="8_0rfm5"]
+[ext_resource type="Texture2D" uid="uid://bkiavjgg8nicl" path="res://Sprites/bag9.png" id="9_ccqxf"]
+[ext_resource type="Texture2D" uid="uid://7j2mxa0usotv" path="res://Sprites/bag10.png" id="10_8icch"]
+[ext_resource type="Texture2D" uid="uid://bicfsicv88f37" path="res://Sprites/bag11.png" id="11_u38qt"]
+[ext_resource type="Texture2D" uid="uid://bdmb533d77y8c" path="res://Sprites/bag12.png" id="12_4d3my"]
+[ext_resource type="Texture2D" uid="uid://cdhbwwlgis4ly" path="res://Sprites/bag13.png" id="13_v5hsu"]
+[ext_resource type="Texture2D" uid="uid://bby5eaochqtca" path="res://Sprites/bag14.png" id="14_4llgo"]
+[ext_resource type="Texture2D" uid="uid://cqtjk38p81uft" path="res://Sprites/bag15.png" id="15_7l3sp"]
+[ext_resource type="Texture2D" uid="uid://bpx4uvi4uug7d" path="res://Sprites/bag16.png" id="16_2cxk1"]
+[ext_resource type="Texture2D" uid="uid://bthdoe0ab8c6o" path="res://Sprites/bag17.png" id="17_fu3do"]
+[ext_resource type="Texture2D" uid="uid://dmiis3hs4mkqn" path="res://Sprites/bag18.png" id="18_80n2c"]
+[ext_resource type="Texture2D" uid="uid://dtfppwhshem5v" path="res://Sprites/bag19.png" id="19_8s5bq"]
+[ext_resource type="Texture2D" uid="uid://drrfmai067qtj" path="res://Sprites/bag20.png" id="20_2kpcp"]
+[ext_resource type="PackedScene" uid="uid://bfordpdwrjgyv" path="res://Scenes/letter_slot.tscn" id="22_56fu1"]
+[ext_resource type="FontFile" uid="uid://darmvdjc8vjdj" path="res://Minecraft.ttf" id="22_508hb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yh1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tnmuq")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tnmuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u7wva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_508hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_56fu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k1prk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_64l3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7m34i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0rfm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ccqxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8icch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u38qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4d3my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v5hsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4llgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7l3sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2cxk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fu3do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_80n2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8s5bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2kpcp")
+}],
+"loop": false,
+"name": &"open",
+"speed": 40.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_56fu1"]
+font = ExtResource("22_508hb")
+font_size = 74
+font_color = Color(0.35680324, 0.18395454, 0.22696573, 1)
+shadow_size = 7
+shadow_color = Color(0.35686275, 0, 0.2, 0.11764706)
+
+[node name="InventoryMenu" type="Control" unique_id=1833406736]
+layout_mode = 3
+anchor_top = 0.002
+anchor_right = 0.27100003
+anchor_bottom = 0.216
+offset_left = -1.0
+offset_top = -0.296
+offset_right = -0.1920166
+offset_bottom = 0.03199768
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7wva")
+
+[node name="Bag" type="AnimatedSprite2D" parent="." unique_id=179332196]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(163, 162)
+scale = Vector2(0.5396027, 0.53960264)
+sprite_frames = SubResource("SpriteFrames_1yh1g")
+animation = &"closed"
+autoplay = "closed"
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "",
+"source_uid": -1
+},
+"slice_section": false
+}
+
+[node name="InventoryMenu" type="ColorRect" parent="." unique_id=813902953]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_right = 0.521
+offset_left = 63.926987
+offset_top = -668.0
+offset_right = 1654.927
+offset_bottom = -164.0
+tooltip_text = "Hehe, Easter Egg!! Amo-te muito Jhenynha <333"
+color = Color(1, 1, 0.8117647, 0.6745098)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="InventoryMenu" unique_id=1035008361]
+light_mask = 15
+visibility_layer = 31
+layout_mode = 0
+offset_right = 1594.0
+offset_bottom = 505.0
+border_color = Color(1, 0, 0, 0)
+border_width = 21.5
+
+[node name="Polygon2D" type="Polygon2D" parent="InventoryMenu" unique_id=1258695959]
+position = Vector2(563, 24)
+color = Color(1, 1, 0.8117647, 0.6745098)
+polygon = PackedVector2Array(-563, 480, -635, 638, -147, 480)
+
+[node name="GridContainer" type="GridContainer" parent="InventoryMenu" unique_id=899293179]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 0
+offset_left = 63.0
+offset_top = 153.0
+offset_right = 1500.0
+offset_bottom = 406.0
+columns = 5
+
+[node name="LetterSlot" parent="InventoryMenu/GridContainer" unique_id=1286892394 instance=ExtResource("22_56fu1")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryMenu" unique_id=1984636527]
+texture_filter = 1
+layout_mode = 0
+offset_left = 673.0
+offset_top = 28.0
+offset_right = 927.0
+offset_bottom = 103.0
+text = "Mochila"
+label_settings = SubResource("LabelSettings_56fu1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="InventoryMenu/GridContainer" to="." method="_on_grid_container_mouse_entered"]
+[connection signal="mouse_entered" from="InventoryMenu/GridContainer" to="InventoryMenu/GridContainer/LetterSlot" method="_on_grid_container_mouse_entered"]

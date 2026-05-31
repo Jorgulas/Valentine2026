@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LetterData" format=3 uid="uid://dmu8gbihq5ls8"]
+
+[ext_resource type="Texture2D" uid="uid://bya08sli1140k" path="res://Sprites/carta_3.png" id="1_yku5a"]
+[ext_resource type="Script" uid="uid://6llieboff1x5" path="res://Scripts/LetterData.gd" id="2_cosrx"]
+
+[resource]
+script = ExtResource("2_cosrx")
+letter_sprite = ExtResource("1_yku5a")
+question_text = "Qual letra do colar que eu queria dar? "
+correct_answer = "j"
+letter_id = 3
+metadata/_custom_type_script = "uid://6llieboff1x5"

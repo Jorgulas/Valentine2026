@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://b52h4ga20eb2s"]
+
+[ext_resource type="Script" uid="uid://b6krtj1yxkajm" path="res://Scripts/final_doug.gd" id="1_k3cp0"]
+[ext_resource type="Texture2D" uid="uid://bpx664nomslp6" path="res://Sprites/cadeira1.png" id="1_us1kf"]
+[ext_resource type="Texture2D" uid="uid://cc8iakdgxfugh" path="res://Sprites/Doug_esperando1.png" id="2_h5h46"]
+[ext_resource type="Texture2D" uid="uid://pvjgf88wsyhr" path="res://Sprites/Doug_esperando2.png" id="3_wpnad"]
+[ext_resource type="Texture2D" uid="uid://ca20ob2yv4uwg" path="res://Sprites/Doug_esperando3.png" id="4_pp2uv"]
+[ext_resource type="Texture2D" uid="uid://c7umft4h6v67d" path="res://Sprites/Doug_esperando4.png" id="5_ymng6"]
+[ext_resource type="Texture2D" uid="uid://b2fswl4a4dkkh" path="res://Sprites/Jheny_final1.png" id="6_b883p"]
+[ext_resource type="AudioStream" uid="uid://d0gjiofgsxh6k" path="res://Sprites/music/gardenbirds.mp3" id="8_jyd7r"]
+[ext_resource type="AudioStream" uid="uid://clmot2t28v7k1" path="res://Sprites/music/heartbubble.mp3" id="9_va8le"]
+[ext_resource type="Texture2D" uid="uid://du0jk4ly0ln5x" path="res://Sprites/finalmessage.png" id="10_fmsg"]
+[ext_resource type="FontFile" uid="uid://darmvdjc8vjdj" path="res://Minecraft.ttf" id="11_4wn0r"]
+[ext_resource type="AudioStream" uid="uid://b2ys8n50tm32b" path="res://Sprites/music/kisses.mp3" id="12_5u5v7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t4p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h5h46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wpnad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pp2uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ymng6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3cp0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_us1kf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b883p")
+}],
+"loop": true,
+"name": &"sentada",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tutlj"]
+size = Vector2(19, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyd7r"]
+size = Vector2(245.5, 149)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3cp0"]
+
+[node name="Final" type="CharacterBody2D" unique_id=1144053852]
+script = ExtResource("1_k3cp0")
+
+[node name="Doug" type="AnimatedSprite2D" parent="." unique_id=1292536444]
+texture_filter = 1
+position = Vector2(-16, 0)
+sprite_frames = SubResource("SpriteFrames_4t4p5")
+autoplay = "default"
+frame_progress = 0.926196
+
+[node name="Jheny" type="AnimatedSprite2D" parent="." unique_id=1542908448]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k3cp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1032187226]
+position = Vector2(-2.5, 6.5)
+shape = SubResource("RectangleShape2D_tutlj")
+disabled = true
+
+[node name="ZoneMusicArea" type="Area2D" parent="." unique_id=987123987]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneMusicArea" unique_id=987123988]
+position = Vector2(-41.25, -53)
+shape = SubResource("RectangleShape2D_jyd7r")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1766703488]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1951997206]
+position = Vector2(-3, 7)
+shape = SubResource("CircleShape2D_k3cp0")
+
+[node name="Garden" type="AudioStreamPlayer2D" parent="." unique_id=496522837]
+stream = ExtResource("8_jyd7r")
+volume_db = 16.481
+bus = &"Music"
+
+[node name="bubblepop" type="AudioStreamPlayer2D" parent="." unique_id=244365740]
+stream = ExtResource("9_va8le")
+volume_db = 13.757
+pitch_scale = 1.34
+bus = &"Music"
+
+[node name="EndingOverlay" type="CanvasLayer" parent="." unique_id=112233445]
+layer = 10
+
+[node name="FinalMessageRect" type="TextureRect" parent="EndingOverlay" unique_id=112233446]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_fmsg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FinalMessage" type="Label" parent="EndingOverlay" unique_id=112233447]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -249.0
+offset_right = 176.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8627596, 0.44510537, 0.8759083, 1)
+theme_override_fonts/font = ExtResource("11_4wn0r")
+text = "Olá Amor,
+Jhenynha Querida do meu 💖.
+
+Espero que te tenhas divertido com este pequeno jogo, dei o meu melhor para que tivesses a melhor experiência com o teu primeiro Metroidvania.
+
+Os pequenos detalhes que quis incluir no jogo, como os questionários, são promessas e pequenas memórias do que criámos até agora.
+
+Já vão quase 7 meses desde que começámos a namorar. E, cada dia contigo parece mais valioso que o anterior. 
+
+Ansioso por ver mais pores do sol e céus estrelados contigo.
+                                                Ass: 
+                                      Your Space Cadet,
+                                         Douguinho 💘🐺
+
+PS: To the moon and back... Awuu
+
+
+"
+autowrap_mode = 3
+
+[node name="kisses" type="AudioStreamPlayer2D" parent="." unique_id=1149644113]
+stream = ExtResource("12_5u5v7")
+
+[connection signal="body_entered" from="ZoneMusicArea" to="." method="_on_zone_music_area_body_entered"]
+[connection signal="body_exited" from="ZoneMusicArea" to="." method="_on_zone_music_area_body_exited"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]

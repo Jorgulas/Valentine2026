@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dj2h4fmmvtn0h"]
+
+[ext_resource type="Script" uid="uid://cppp5avgixoww" path="res://Scripts/door.gd" id="1_door"]
+[ext_resource type="Texture2D" uid="uid://dkiqlmcvulffb" path="res://Sprites/Door_OPEN1.png" id="2_fahql"]
+[ext_resource type="Texture2D" uid="uid://bkw2frwiapmfc" path="res://Sprites/Door_OPEN4.png" id="3_ab4ky"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a43ba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fahql")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ab4ky")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(16, 64)
+
+[node name="Door" type="StaticBody2D" unique_id=527222493]
+script = ExtResource("1_door")
+
+[node name="DoorSprite" type="AnimatedSprite2D" parent="." unique_id=1738838052]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_a43ba")
+
+[node name="DoorCollision" type="CollisionShape2D" parent="." unique_id=232170085]
+position = Vector2(-24, 0)
+shape = SubResource("RectangleShape2D_v6xrn")

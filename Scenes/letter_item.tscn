@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dve4bawffge8x"]
+
+[ext_resource type="Script" uid="uid://j6yyylsp7g1d" path="res://Scripts/douguinho.gd" id="1_b0q5p"]
+[ext_resource type="Texture2D" uid="uid://c4fywnvtqoybq" path="res://Sprites/carta_1.png" id="2_i1qls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4nkw"]
+size = Vector2(37, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j7skw"]
+radius = 17.0
+
+[node name="LetterItem" type="CharacterBody2D" unique_id=69757140]
+collision_mask = 3
+script = ExtResource("1_b0q5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=711677135]
+texture_filter = 1
+texture = ExtResource("2_i1qls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1811774374]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_d4nkw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=987123987]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987123988]
+shape = SubResource("CircleShape2D_j7skw")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=987123989]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

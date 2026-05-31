@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://v8nlscmegn28"]
+
+[ext_resource type="Script" uid="uid://du5js3oepkbti" path="res://Scripts/panel_container.gd" id="1_srtw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnmd2"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.96862745, 0.93333334, 0.7411765, 1)
+border_width_left = 7
+border_width_top = 1
+border_width_right = 7
+border_width_bottom = 5
+border_color = Color(0.7036336, 0.36108965, 1, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+shadow_color = Color(0.70630246, 0.43804473, 1, 0.20392157)
+shadow_size = 1
+
+[node name="ChatBubble" type="PanelContainer" unique_id=132144526]
+offset_right = 170.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnmd2")
+script = ExtResource("1_srtw7")
+
+[node name="Label" type="Label" parent="." unique_id=1859112063]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29879817, 0.016821722, 0.39412248, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="." unique_id=68469089]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

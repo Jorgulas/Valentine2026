@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LetterData" format=3 uid="uid://clrl0b0xdkxl6"]
+
+[ext_resource type="Texture2D" uid="uid://dl4f47cgo53ge" path="res://Sprites/carta_5.png" id="1_ebyja"]
+[ext_resource type="Script" uid="uid://6llieboff1x5" path="res://Scripts/LetterData.gd" id="2_gw0eb"]
+
+[resource]
+script = ExtResource("2_gw0eb")
+letter_sprite = ExtResource("1_ebyja")
+question_text = "Qual o nome do meu PAU?"
+correct_answer = "jeremias"
+letter_id = 5
+metadata/_custom_type_script = "uid://6llieboff1x5"

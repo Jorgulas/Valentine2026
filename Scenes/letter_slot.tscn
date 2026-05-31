@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bfordpdwrjgyv"]
+
+[ext_resource type="Script" uid="uid://chpt3obhy2yup" path="res://Scripts/letter_slot.gd" id="1_eppdu"]
+[ext_resource type="Texture2D" uid="uid://c4fywnvtqoybq" path="res://Sprites/carta_1.png" id="2_y48yo"]
+
+[node name="LetterSlot" type="TextureButton" unique_id=1286892394]
+custom_minimum_size = Vector2(250, 250)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eppdu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1717654947]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 0
+offset_right = 241.0
+offset_bottom = 253.35898
+texture = ExtResource("2_y48yo")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

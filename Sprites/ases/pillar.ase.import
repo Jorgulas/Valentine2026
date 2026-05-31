@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://br6dp4mq0e6j4"
+path="res://.godot/imported/pillar.ase-4f2e369f6a2ceeef585abf243438f9e9.res"
+
+[deps]
+
+source_file="res://Sprites/ases/pillar.ase"
+dest_files=["res://.godot/imported/pillar.ase-4f2e369f6a2ceeef585abf243438f9e9.res"]
+
+[params]
+

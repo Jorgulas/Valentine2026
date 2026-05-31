@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://6l38yl71pire"]
+
+[ext_resource type="Script" uid="uid://u8sqegnofxex" path="res://Scripts/static_body_2d.gd" id="1_lwymu"]
+[ext_resource type="Texture2D" uid="uid://ho8ijx3ib2rd" path="res://Sprites/heart_box_anim1.png" id="2_08ats"]
+[ext_resource type="Texture2D" uid="uid://bt7yic7jbs7n" path="res://Sprites/heart_box_anim.png" id="2_iuva3"]
+[ext_resource type="Texture2D" uid="uid://ds7uovy4wajxk" path="res://Sprites/heart_box_anim2.png" id="3_iuva3"]
+[ext_resource type="Texture2D" uid="uid://55mq7egu3tru" path="res://Sprites/heart_box_anim3.png" id="4_h008l"]
+[ext_resource type="Texture2D" uid="uid://dih7sm87gog3q" path="res://Sprites/heart_box_anim4.png" id="5_medge"]
+[ext_resource type="Texture2D" uid="uid://dey7thtgp2opa" path="res://Sprites/heart_box_anim5.png" id="6_g40jx"]
+[ext_resource type="Texture2D" uid="uid://dwjbl5hq2ieo1" path="res://Sprites/heart_box_anim6.png" id="7_mfi80"]
+[ext_resource type="Texture2D" uid="uid://b5n8s16hwog72" path="res://Sprites/heart_box_anim7.png" id="8_mivce"]
+[ext_resource type="AudioStream" uid="uid://ib2xqjii2icn" path="res://Sprites/music/loveyblockopen.wav" id="11_h008l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgea8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iuva3")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": ExtResource("2_08ats")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_iuva3")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_h008l")
+}, {
+"duration": 0.4,
+"texture": ExtResource("5_medge")
+}, {
+"duration": 0.4,
+"texture": ExtResource("6_g40jx")
+}, {
+"duration": 0.4,
+"texture": ExtResource("7_mfi80")
+}, {
+"duration": 10.0,
+"texture": ExtResource("8_mivce")
+}],
+"loop": true,
+"name": &"idle_1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emb34"]
+size = Vector2(14, 16)
+
+[sub_resource type="Animation" id="Animation_307lb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wcecv"]
+resource_name = "bump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -2.21), Vector2(0, -1.46), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jagel"]
+_data = {
+&"RESET": SubResource("Animation_307lb"),
+&"bump": SubResource("Animation_wcecv")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1206750514]
+script = ExtResource("1_lwymu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1550196582]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kgea8")
+animation = &"empty"
+autoplay = "idle_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1485690815]
+shape = SubResource("RectangleShape2D_emb34")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1110257616]
+libraries/ = SubResource("AnimationLibrary_jagel")
+
+[node name="BumpSound" type="AudioStreamPlayer2D" parent="." unique_id=181848103]
+stream = ExtResource("11_h008l")
+volume_db = -16.914
+pitch_scale = 2.34
+bus = &"SFX"

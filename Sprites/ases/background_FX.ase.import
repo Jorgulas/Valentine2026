@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bvf3khw330st1"
+path="res://.godot/imported/background_FX.ase-2f98a18dce7fd207bd12afd7d088cf41.res"
+
+[deps]
+
+source_file="res://Sprites/ases/background_FX.ase"
+dest_files=["res://.godot/imported/background_FX.ase-2f98a18dce7fd207bd12afd7d088cf41.res"]
+
+[params]
+

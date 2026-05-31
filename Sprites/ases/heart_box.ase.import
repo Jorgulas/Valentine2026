@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://i8sjav6eb8om"
+path="res://.godot/imported/heart_box.ase-8a88c700a2b6ec799b36a45792a79c43.res"
+
+[deps]
+
+source_file="res://Sprites/ases/heart_box.ase"
+dest_files=["res://.godot/imported/heart_box.ase-8a88c700a2b6ec799b36a45792a79c43.res"]
+
+[params]
+

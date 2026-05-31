@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LetterData" format=3 uid="uid://bbnx0otlwaj7e"]
+
+[ext_resource type="Texture2D" uid="uid://k3mgaqyshclj" path="res://Sprites/carta_4.png" id="1_1lgi2"]
+[ext_resource type="Script" uid="uid://6llieboff1x5" path="res://Scripts/LetterData.gd" id="2_1x540"]
+
+[resource]
+script = ExtResource("2_1x540")
+letter_sprite = ExtResource("1_1lgi2")
+question_text = "Onde te prometi levar?"
+correct_answer = "roda-gigante"
+letter_id = 4
+metadata/_custom_type_script = "uid://6llieboff1x5"

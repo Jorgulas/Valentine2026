@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dcfqqsjcqcopb"
+path="res://.godot/imported/blank_msg.ase-c66fbdceaa91c231f05b2bcd56e55262.res"
+
+[deps]
+
+source_file="res://Sprites/ases/blank_msg.ase"
+dest_files=["res://.godot/imported/blank_msg.ase-c66fbdceaa91c231f05b2bcd56e55262.res"]
+
+[params]
+
